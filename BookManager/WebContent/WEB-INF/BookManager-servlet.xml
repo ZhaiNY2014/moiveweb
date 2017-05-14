@@ -5,10 +5,12 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- HandlerMapping -->
-    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
     
     <!-- HandlerAdapter -->
-    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+    	<property name="synchronizeOnSession" value="true"/>
+    </bean>
     
     <!-- ViewResolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -18,6 +20,6 @@
     </bean>
     
     <!-- 处理器 -->
-    <bean name="/index" class="com.bm.web.controller.IndexController"/>
+    <bean class="com.bm.web.controller.IndexController"/>
     
 </beans>
