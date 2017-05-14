@@ -8,7 +8,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class IndexController{
-	@RequestMapping(value = "/index")
+	@RequestMapping(value = "/index2")
 	public ModelAndView index() {
 		//1、收集参数
 		
