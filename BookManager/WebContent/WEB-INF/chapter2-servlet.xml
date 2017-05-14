@@ -18,6 +18,6 @@
     </bean>
     
     <!-- 处理器 -->
-    <bean name="/index" class="cn.javass.chapter2.web.controller.IndexController"/>
+    <bean name="/index" class="com.bm.web.controller.IndexController"/>
     
 </beans>
