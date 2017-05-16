@@ -1,5 +1,6 @@
 package com.moviemanager.web.jdbc;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -14,7 +15,7 @@ import com.moviemanager.web.model.MovieModel;
 
 public class SpringjdbcConfig {
 	
-	private String dbUrl = "jdbc:mysql://localhost:3306/moviemanager";
+	private String dbUrl = "jdbc:mysql://localhost:3306/moviemanager?useUnicode=true&characterEncoding=UTF-8";
 	private String jdbcname = "com.mysql.jdbc.Driver";
 	private String dbusername = "root";
 	private String dbpassword = "123456";
@@ -42,15 +43,17 @@ public class SpringjdbcConfig {
 	 * 这个函数用来查询单个的电影信息
 	 * @param moviename
 	 * @return MovieModel
+	 * @throws Exception 
 	 */
-	public MovieModel SelectMoiveName(String moviename){
-		String sql = "Select * from movieinfo where moviename=" + moviename ;
+	public MovieModel SelectMoiveName(String moviename) throws Exception{
+		String movienameutf8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
+		String sql = "Select * from movieinfo where moviename=\"" + movienameutf8 + "\"";
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
 		Connection con = null;
 		MovieModel movie = new MovieModel();
-		try{
+		
 		con = dbutil.Getcon();
 		pstm = (PreparedStatement) con.prepareStatement(sql);
 		rs = pstm.executeQuery(sql);
@@ -63,13 +66,9 @@ public class SpringjdbcConfig {
 			movie.setCountry(rs.getString("country"));
 			movie.setLanguage(rs.getString("language"));
 			movie.setShowdate(rs.getInt("showdate"));
-			movie.setScore(rs.getInt("score"));
+			movie.setScore(rs.getDouble("score"));
 		}	
-		}catch(SQLException ex){
-			System.out.println("SQLException:"+ex.getMessage());
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
+		
 		return movie;
 	}
 	

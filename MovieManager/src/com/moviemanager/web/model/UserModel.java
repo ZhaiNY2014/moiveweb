@@ -14,6 +14,7 @@ public class UserModel implements Serializable{
 	private String password;
 	@NotEmpty
 	private boolean isownmovie;
+	private int account;
 /*	public int getUserid() {
 		return userid;
 	}
@@ -37,6 +38,13 @@ public class UserModel implements Serializable{
 	}
 	public void setIsownmovie(boolean isownmovie) {
 		this.isownmovie = isownmovie;
+	}
+	
+	public int getAccount() {
+		return account;
+	}
+	public void setAccount(int account) {
+		this.account = account;
 	}
 	public UserModel(){
 		

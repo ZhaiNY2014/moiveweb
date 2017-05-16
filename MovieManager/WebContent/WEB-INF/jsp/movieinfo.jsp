@@ -13,20 +13,26 @@
 	<div id="table" style="margin:0 auto;display:table-cell;vertical-align: middle;">
 		<table border=1>
 			<tr>
+				<th>评分</th>
 				<th>电影名</th>
 				<th>导演</th>
 				<th>主演</th>
 				<th>类型</th>
 				<th>语言</th>
+				<th>上映国家</th>
 				<th>上映年份</th>
+				<th>我想看</th>
 			</tr>
 			<tr>
-		        <td><a href="./buy">肖申克的救赎</a></td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+				<td>${movie.score }</td>
+		        <td>${movie.moviename}</td>
+		        <td>${movie.director }</td>
+		        <td>${movie.actor }</td>
+		        <td>${movie.classification }</td>
+		        <td>${movie.language}</td>
+		        <td>${movie.country }</td>
+		        <td>${movie.showdate }</td>
+		        <td>购买(${movie.price}元)</td>
 		    </tr>
 		    
 		</table></div>

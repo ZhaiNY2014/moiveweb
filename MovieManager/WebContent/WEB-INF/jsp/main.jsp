@@ -19,7 +19,7 @@
 		<a href="">猜你喜欢</a></div>
 	 
 	<div id="content" style="width:400px;float:left;">
-		<form action="" method="get">
+		<form action="./movieinfo" method="get">
 			<input type="text" name="moviename">
 			<input type="submit" value="搜索一下">
 		</form></div>

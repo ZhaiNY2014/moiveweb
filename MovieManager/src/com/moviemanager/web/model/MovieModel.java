@@ -12,8 +12,14 @@ public class MovieModel implements Serializable{
 	private String classification;
 	private String country;
 	private String language;
-	private int showdate;
-	private int score;
+	private String showdate;
+	private double score;
+	private int price = 10;
+	
+	
+	public MovieModel(){
+	}
+	
 	public String getMoviename() {
 		return moviename;
 	}
@@ -50,18 +56,21 @@ public class MovieModel implements Serializable{
 	public void setLanguage(String language) {
 		this.language = language;
 	}
-	public int getShowdate() {
+	public String getShowdate() {
 		return showdate;
 	}
 	public void setShowdate(int showdate) {
-		this.showdate = showdate;
+		Integer year = showdate/100;
+		Integer day = showdate%100;
+		this.showdate = year.toString()+"-"+day.toString();
 	}
-	public int getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(int score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
-	public MovieModel(){
+	public int getprice(){
+		return price;
 	}
 }
