@@ -23,6 +23,7 @@
 			<input type="text" name="moviename">
 			<input type="submit" value="搜索一下">
 		</form></div>
+	<div id="tologin"><a href="./Login/login">登录</a> </div>
 	</div>
 </body>
 </html>

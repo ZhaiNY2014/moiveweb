@@ -1,9 +1,11 @@
 package com.moviemanager.web.model;
 
+import java.io.Serializable;
+
 import org.springframework.stereotype.Component;
 
 @Component
-public class MoiveModel {
+public class MovieModel implements Serializable{
 	private String moviename;
 	private String director;
 	private String actor;
@@ -60,6 +62,6 @@ public class MoiveModel {
 	public void setScore(int score) {
 		this.score = score;
 	}
-	public MoiveModel(){
+	public MovieModel(){
 	}
 }
