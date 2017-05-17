@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>这里是电影清单</title>
+<title>超级电影网-电影详情</title>
 </head>
 <body>
 	<div id="container" >

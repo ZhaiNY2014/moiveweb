@@ -16,7 +16,7 @@
 	 
 	<div id="menu" style="height:200px;width:200px;float:left;">
 		<b>选择一下</b><br>
-		<a href="./movieinfo">电影清单</a><br>
+		<a href="">电影清单</a><br>
 		<a href="./Top10">最受好评top10</a><br>
 		<a href="">猜你喜欢</a></div>
 	 
@@ -25,8 +25,8 @@
 			<input type="text" name="moviename">
 			<input type="submit" value="搜索一下">
 		</form></div>
-	<div id="tologin"><a href="./Login/login">	<%String islogin = "";
-	if(session.getAttribute("userstatus") != "false"){
+	<div id="tologin"><a href="./login">	<%String islogin = "";
+	if(session.getAttribute("islogin").equals("nologin")){
 		islogin = "登录";
 	}else{
 		String username = (String)session.getAttribute("username");

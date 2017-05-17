@@ -44,7 +44,8 @@ public class MovieInfoController {
 		session.setAttribute("moviedate", movie.getShowdate());
 		session.setAttribute("moviescore", movie.getScore_D().toString());
 		session.setAttribute("movieprice", movie.getprice_i().toString());
+		
 		mv.setViewName("movieinfo");
-		return mv;//new ModelAndView(new RedirectView("movieinfo"));
+		return mv;
 	}
 }

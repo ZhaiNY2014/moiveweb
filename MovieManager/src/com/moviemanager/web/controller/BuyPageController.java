@@ -15,7 +15,7 @@ public class BuyPageController {
 	@RequestMapping(value = "/buy")
 	public ModelAndView BuyPage(HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
-		if(session.getAttribute("islogin")!=null &&session.getAttribute("islogin").toString().equals("is")){//判断是否已登录
+		if(session.getAttribute("islogin").toString().equals("islogin")){//判断是否已登录
 			//判断余额足够支付
 			SpringjdbcConfig sjc = new SpringjdbcConfig();
 //			UserModel user = sjc.SelectUser(session.getAttribute("username").toString());
@@ -25,20 +25,24 @@ public class BuyPageController {
 			if(account >= 10){
 				//更新Account
 				account -=10;
-				int rs1 = sjc.UpdateUserAccount(account, userid);
-				if(rs1 > 0){
+				int rs1 = sjc.UpdateUserAccountForBuy(-10, userid);
+				if(rs1 > 0){//扣款成功
 					//写入一条记录
+					Integer account_i = new Integer(account);
+					session.setAttribute("account", account_i.toString());
 					int rs2 = sjc.InsertBoughtlog(session.getAttribute("username").toString(), session.getAttribute("moviename").toString());
 					if(rs2 <=0)
-						mv.setViewName("/buyfail");
+						System.out.println("log fail");
 					else
 						mv.setViewName("buysuccess");
 				}else
-					mv.setViewName("/buyfail");
+					mv.addObject("message", "db error");
+					mv.setViewName("/buyfail_a");
 			}else
-				mv.setViewName("/buyfail");
+				mv.addObject("message", "余额不足");
+				mv.setViewName("/buyfail_a");
 		}else{
-			mv.setViewName("/buyfail");
+			mv.setViewName("/buyfail_l");//未登录，返回登录
 		}
 			
 		return mv;

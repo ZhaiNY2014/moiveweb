@@ -1,8 +1,9 @@
 eclipse.preferences.version=1
-encoding//WebContent/WEB-INF/jsp/Login/haslogin.jsp=UTF-8
-encoding//WebContent/WEB-INF/jsp/Login/login.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/buy.jsp=UTF-8
-encoding//WebContent/WEB-INF/jsp/buyfail.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/buyfail_l.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/haslogin.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/login.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/movieinfo.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/recharge.jsp=UTF-8
 encoding/<project>=UTF-8
 separateDerivedEncodings=true

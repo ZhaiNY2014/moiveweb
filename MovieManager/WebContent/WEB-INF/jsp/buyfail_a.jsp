@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>购买失败</title>
 </head>
 <body>
-buysuccess
+${message },点我充值
+<input type="button" onclick="window.location.href='./recharge'" value="充值">
 </body>
 </html>

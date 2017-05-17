@@ -11,10 +11,12 @@
 	<div id="header" >
 		<h1 style="margin-bottom:0;">超级电影网</h1></div>
 	<div id="menu" style="height:200px;width:100px;float:left;">
-		用户名<br>
-		我的余额<br>
+		<% String username=(String)session.getAttribute("username");
+		out.print(username);%><br>
+		<% String account=(String)session.getAttribute("account");
+		out.print(account);%>元<br>
 		<a href="">我的电影</a><br>
-		<a href="">我要充值</a><br></div>
+		<a href="./recharge">我要充值</a><br></div>
 		<div id="content" style="float:left;">
 			<div id="movie" >
 				<table border=1>
@@ -43,7 +45,7 @@
 				<tr>
 					<td>价格：<% String price=(String)session.getAttribute("movieprice");
 		out.print(price);%></td>
-					<td><input type="submit" onclick="window.location.href='/buy'" value="购买">></td>
+					<td><input type="button" onclick="window.location.href='./buy'" value="购买">></td>
 				</tr>
 				</table>	
 			</div>

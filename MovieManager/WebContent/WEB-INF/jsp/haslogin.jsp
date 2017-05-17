@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-buysuccess
+登录成功！<p>
+欢迎！   ${user}   点击回到主页面
+<input type="submit" onclick="window.location.href'./main'" value="返回">
+
 </body>
 </html>

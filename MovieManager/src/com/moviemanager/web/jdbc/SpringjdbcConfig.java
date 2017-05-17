@@ -136,7 +136,7 @@ public class SpringjdbcConfig {
 		return user;
 	}
 	
-	public int UpdateUserAccount(int account_new, int userid) throws Exception{
+	public int UpdateUserAccountForBuy(int account_new, int userid) throws Exception{
 		int rs = 0;
 		String sql = "update users set account=" + account_new + "where UserID=" + userid;
 		System.out.println(sql);
@@ -151,9 +151,26 @@ public class SpringjdbcConfig {
 		return rs;
 	}
 	
+	public int UpdateUserAccountForRecharge(int recharge, String username) throws Exception{
+		int rs = 0;
+		String sql = "update users set account=account+" + recharge + "where username=" + "\"" + username + "\"";
+		System.out.println(sql);
+		PreparedStatement pstm = null;
+		SpringjdbcConfig dbutil = new SpringjdbcConfig();
+		Connection con = null;
+		
+		con = dbutil.Getcon();
+		pstm = (PreparedStatement) con.prepareStatement(sql);
+		rs = pstm.executeUpdate();
+		System.out.println(rs);
+		return rs;
+	}
+	
 	public int InsertBoughtlog(String username,String moviename) throws Exception{
 		int rs=0;
-		String sql = "insert into boughtlog values(null,\""+ username + "\",\""+ moviename + "\")" ;
+		String usernameuft8 = new String(username.getBytes("ISO-8859-1"),"utf-8");
+		String movienameuft8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
+		String sql = "insert into boughtlog values(null,\""+ usernameuft8 + "\",\""+ movienameuft8 + "\")" ;
 		System.out.println(sql);
 		PreparedStatement pstm = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();

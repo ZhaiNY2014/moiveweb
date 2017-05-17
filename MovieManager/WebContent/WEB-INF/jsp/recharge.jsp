@@ -4,10 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>充值</title>
 </head>
 <body>
-点击登录
-<input type="button" onclick="window.location.href='./Login/login'" value="登录">
+<form action="/buy" method="get">
+要充值的用户名：<input type="text" name="username_r">
+要充值的金额：<input type="text" name="recharge">
+<input type="submit" value="充值">
+</form>
 </body>
 </html>
