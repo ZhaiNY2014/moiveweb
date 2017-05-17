@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-false
+登录失败！点击返回主页
+<input type="submit" onclick="window.location.href='./login'" value="返回" >
 </body>
 </html>

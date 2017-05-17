@@ -6,22 +6,32 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
+import com.sun.corba.se.spi.servicecontext.UEInfoServiceContext;
+
 public class UserModel implements Serializable{
-//	private int userid;
-	@Size(min=6,max=16)
+	private int userid;
+	//@Size(min=6,max=16)
 	private String username;
-	@Size(min=6,max=16)
+	//@Size(min=6,max=16)
 	private String password;
-	@NotEmpty
-	private boolean isownmovie;
+	//@NotEmpty
+	private boolean isownmovie = false;
 	private int account;
-/*	public int getUserid() {
+	public int getUserid() {
 		return userid;
 	}
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-*/	public String getUsername() {
+	/**
+	 * 
+	 * @return Integer userid_I
+	 */
+	public Integer getUserid_I(){
+		Integer userid_I = new Integer(userid);
+		return userid_I;
+	}
+	public String getUsername() {
 		return username;
 	}
 	public void setUsername(String username) {
@@ -42,6 +52,14 @@ public class UserModel implements Serializable{
 	
 	public int getAccount() {
 		return account;
+	}
+	/**
+	 * 
+	 * @return Integer getaccount_I
+	 */
+	public Integer getAccount_I(){
+		Integer getaccount_I = new Integer(account);
+		return getaccount_I;
 	}
 	public void setAccount(int account) {
 		this.account = account;

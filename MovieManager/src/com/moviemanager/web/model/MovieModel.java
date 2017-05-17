@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Component
 public class MovieModel implements Serializable{
+	private int movieId;
 	private String moviename = "";
 	private String director = "";
 	private String actor = "";
@@ -34,6 +35,21 @@ public class MovieModel implements Serializable{
 			return false;
 	}
 	
+	public int getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(int movieId) {
+		this.movieId = movieId;
+	}
+	/**
+	 * 
+	 * @return Integer movieId_I
+	 */
+	public Integer getMoiveId_I(){
+		Integer movieId_I = new Integer(movieId);
+		return movieId_I;
+	}
 	public String getMoviename() {
 		return moviename;
 	}

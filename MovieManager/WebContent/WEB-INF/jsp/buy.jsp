@@ -43,7 +43,7 @@
 				<tr>
 					<td>价格：<% String price=(String)session.getAttribute("movieprice");
 		out.print(price);%></td>
-					<td><button type="submit" name="buy">购买</button></td>
+					<td><input type="submit" onclick="window.location.href='/buy'" value="购买">></td>
 				</tr>
 				</table>	
 			</div>

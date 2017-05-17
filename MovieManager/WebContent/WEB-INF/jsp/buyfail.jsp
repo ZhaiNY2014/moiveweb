@@ -7,9 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-登录成功！<p>
-欢迎！   ${user}   点击回到刚刚的页面
- 
-
+点击登录
+<input type="button" onclick="window.location.href='./Login/login'" value="登录">
 </body>
 </html>

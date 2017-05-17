@@ -7,6 +7,8 @@
 <title>超级电影网</title>
 </head>
 <body>
+	<% 
+	%>
 	<div id="container" >
 	 
 	<div id="header" >
@@ -23,7 +25,13 @@
 			<input type="text" name="moviename">
 			<input type="submit" value="搜索一下">
 		</form></div>
-	<div id="tologin"><a href="./Login/login">登录</a> </div>
+	<div id="tologin"><a href="./Login/login">	<%String islogin = "";
+	if(session.getAttribute("userstatus") != "false"){
+		islogin = "登录";
+	}else{
+		String username = (String)session.getAttribute("username");
+		islogin = username;
+	} out.print(islogin);%></a> </div>
 	</div>
 </body>
 </html>
