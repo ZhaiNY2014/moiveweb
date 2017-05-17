@@ -48,6 +48,7 @@ public class SpringjdbcConfig {
 	public MovieModel SelectMoiveName(String moviename) throws Exception{
 		String movienameutf8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
 		String sql = "Select * from movieinfo where moviename=\"" + movienameutf8 + "\"";
+		System.out.println(sql + "," + movienameutf8);
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();

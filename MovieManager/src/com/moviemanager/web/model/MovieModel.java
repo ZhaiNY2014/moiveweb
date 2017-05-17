@@ -3,21 +3,35 @@ package com.moviemanager.web.model;
 import java.io.Serializable;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Component
 public class MovieModel implements Serializable{
-	private String moviename;
-	private String director;
-	private String actor;
-	private String classification;
-	private String country;
-	private String language;
-	private String showdate;
-	private double score;
+	private String moviename = "";
+	private String director = "";
+	private String actor = "";
+	private String classification = "";
+	private String country = "";
+	private String language = "";
+	private String showdate = "";
+	private double score = 0.00;
 	private int price = 10;
 	
 	
 	public MovieModel(){
+	}
+	
+	/**
+	 * true == is empty
+	 * false == not empty
+	 * @return boolean
+	 */
+	public boolean IsNull(){
+		if(moviename == "" || director =="" || actor == "" || 
+				classification == ""|| country == "" || language == "")
+			return true;
+		else
+			return false;
 	}
 	
 	public String getMoviename() {
@@ -67,10 +81,22 @@ public class MovieModel implements Serializable{
 	public double getScore() {
 		return score;
 	}
+	public Double getScore_D(){
+		Double score_D = new Double(score);
+		return score_D;
+	}
 	public void setScore(double score) {
 		this.score = score;
 	}
 	public int getprice(){
 		return price;
+	}
+	/**
+	 * 
+	 * @return return price_i
+	 */
+	public Integer getprice_i(){
+		Integer price_i = new Integer(price);
+		return price_i;
 	}
 }

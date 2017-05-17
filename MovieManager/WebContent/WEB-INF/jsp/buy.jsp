@@ -10,36 +10,45 @@
 	<div id="container" >
 	<div id="header" >
 		<h1 style="margin-bottom:0;">超级电影网</h1></div>
-	<div id="menu" style="height:200px;width:200px;float:left;">
+	<div id="menu" style="height:200px;width:100px;float:left;">
 		用户名<br>
 		我的余额<br>
 		<a href="">我的电影</a><br>
 		<a href="">我要充值</a><br></div>
-		<div id="content" style="width:400px;float:left;">
+		<div id="content" style="float:left;">
 			<div id="movie" >
 				<table border=1>
 				<tr>
-					<td>电影名</td>
+					<td>片名：<% String name=(String)session.getAttribute("moviename");
+		out.print(name);%></td>
 				</tr>
 				<tr>
-					<td>导演名</td>
-					<td>类型</td>
+					<td>导演：<% String director=(String)session.getAttribute("moviedirector");
+		out.print(director);%></td>
+					<td>类型：<% String classification=(String)session.getAttribute("movieclass");
+		out.print(classification);%></td>
 				</tr>
 				<tr>
-					<td>主演名</td>
-					<td>语言</td>
+					<td>主演：<% String actor=(String)session.getAttribute("movieactor");
+		out.print(actor);%></td>
+					<td>语言：<% String language=(String)session.getAttribute("movielanguage");
+		out.print(language);%></td>
 				</tr>
 				<tr>
-					<td>上映日期</td>
-					<td>评分</td>
+					<td>上映日期：<% String showdate=(String)session.getAttribute("moviedate");
+		out.print(showdate);%></td>
+					<td>评分：<% String score =(String)session.getAttribute("moviescore");
+		out.print(score);%></td>
 				</tr>
 				<tr>
-					<td>价格</td>
+					<td>价格：<% String price=(String)session.getAttribute("movieprice");
+		out.print(price);%></td>
 					<td><button type="submit" name="buy">购买</button></td>
 				</tr>
 				</table>	
 			</div>
 		</div>
 	</div>
+	
 </body>
 </html>
