@@ -7,9 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-${rechargeresult}
+注册成功！ 点击回到主页面<p>
 <form action="./main" method="post">
-<input type="submit" value="返回">
-</form>
+<input type="submit" value="返回"></form>
 </body>
 </html>

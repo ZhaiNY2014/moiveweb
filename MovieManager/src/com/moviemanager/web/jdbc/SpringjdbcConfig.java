@@ -1,5 +1,6 @@
 package com.moviemanager.web.jdbc;
 
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -224,5 +225,22 @@ public class SpringjdbcConfig {
 		con = dbutil.Getcon();
 		pstm = (PreparedStatement) con.prepareStatement(sql);
 		pstm.executeUpdate();
+	}
+	
+	public int Register(String username,String password) throws Exception{
+		int rs=0;
+		PreparedStatement pstm = null;
+		SpringjdbcConfig dbutil = new SpringjdbcConfig();
+		Connection con = null;
+		String usernameutf8 = new String(username.getBytes("ISO-8859-1"),"utf-8");
+		String passwordutf8 = new String(password.getBytes("ISO-8859-1"),"utf-8");
+		
+		String sql = "insert into users values(null,\""+usernameutf8+"\",\""+passwordutf8+"\",0,0)";
+		System.out.println(sql);
+		
+		con = dbutil.Getcon();
+		pstm = (PreparedStatement) con.prepareStatement(sql);
+		rs = pstm.executeUpdate();
+		return rs;
 	}
 }

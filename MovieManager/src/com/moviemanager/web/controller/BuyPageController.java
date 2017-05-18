@@ -63,4 +63,5 @@ public class BuyPageController {
 		mv.setViewName("buyinfo");
 		return mv;
 	}
+	
 }

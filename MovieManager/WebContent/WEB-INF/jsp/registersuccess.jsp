@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-${rechargeresult}
+${message }
 <form action="./main" method="post">
 <input type="submit" value="返回">
 </form>

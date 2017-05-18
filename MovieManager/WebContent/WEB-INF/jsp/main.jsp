@@ -16,9 +16,9 @@
 	 
 	<div id="menu" style="height:200px;width:200px;float:left;">
 		<b>选择一下</b><br>
-		<a href="">电影清单</a><br>
+		<a href="./movielist1">电影清单</a><br>
 		<a href="./Top10">最受好评top10</a><br>
-		<a href="">猜你喜欢</a></div>
+		<a href="./Top10">猜你喜欢</a></div>
 	 
 	<div id="content" style="width:400px;float:left;">
 		<form action="./movieinfo" method="get">
@@ -32,6 +32,8 @@
 		String username = (String)session.getAttribute("username");
 		islogin = username;
 	} out.print(islogin);%></a> </div>
+	<div><a href="./register"> 注册</a>
+	</div>
 	</div>
 </body>
 </html>

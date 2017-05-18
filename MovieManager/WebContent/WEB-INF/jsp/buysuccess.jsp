@@ -8,7 +8,7 @@
 </head>
 <body>
 购买成功,点击返回
-<form action="。/main">
+<form action="./main">
 <input type="submit" value="返回">
 </form>
 </body>
