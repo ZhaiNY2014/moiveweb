@@ -93,16 +93,13 @@ public class SpringjdbcConfig {
 		rs = pstm.executeQuery(sql);
 		
 		while(rs.next()){
-			movie.setMovieId(rs.getInt("movieid"));
-			movie.setMoviename(rs.getString("moviename"));
-			movie.setDirector(rs.getString("director"));
-			movie.setActor(rs.getString("actor"));
-			movie.setClassification(rs.getString("classification"));
-			movie.setCountry(rs.getString("country"));
-			movie.setLanguage(rs.getString("language"));
-			movie.setShowdate(rs.getInt("showdate"));
-			movie.setScore(rs.getInt("score"));
-			movielist.add(movie);
+			String showdate = movie.getShowdate(rs.getInt("showdate"));
+			movielist.add(new MovieModel(rs.getInt("movieid"), rs.getString("moviename"), 
+					rs.getString("director"), rs.getString("actor"),rs.getString("classification"), rs.getString("country"), 
+					rs.getString("language"),showdate, rs.getDouble("score")));
+			for(MovieModel movie1:movielist){
+				System.out.println(movie1.getMoviename());
+			}
 		}	
 		}catch(SQLException ex){
 			System.out.println("SQLException:"+ex.getMessage());

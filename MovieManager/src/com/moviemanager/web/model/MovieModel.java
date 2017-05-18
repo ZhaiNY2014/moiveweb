@@ -22,6 +22,19 @@ public class MovieModel implements Serializable{
 	public MovieModel(){
 	}
 	
+	public MovieModel(int movieid,String moviename,String director,String actor,
+			String classification,String country,String language,String showdate,double score){
+		this.movieId = movieid;
+		this.moviename = moviename;
+		this.director = director;
+		this.actor = actor;
+		this.classification = classification;
+		this.country = country;
+		this.language = language;
+		this.showdate = showdate;
+		this.score = score;
+
+	}
 	/**
 	 * true == is empty
 	 * false == not empty
@@ -88,6 +101,12 @@ public class MovieModel implements Serializable{
 	}
 	public String getShowdate() {
 		return showdate;
+	}
+	
+	public String getShowdate(int showdate){
+		Integer year = showdate/100;
+		Integer day = showdate%100;
+		return year.toString()+"-"+day.toString();
 	}
 	public void setShowdate(int showdate) {
 		Integer year = showdate/100;

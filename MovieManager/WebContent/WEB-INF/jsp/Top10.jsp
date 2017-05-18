@@ -23,93 +23,91 @@
 			</tr>
 			<tr>
 				<td>Top1</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie1.moviename}</td>
+		        <td>${movie1.director}</td>
+		        <td>${movie1.actor }</td>
+		        <td>${movie1.classification }</td>
+		        <td>${movie1.language }</td>
+		        <td>${movie1.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top2</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
-		    </tr>
+		        <td>${movie2.moviename}</td>
+		        <td>${movie2.director}</td>
+		        <td>${movie2.actor }</td>
+		        <td>${movie2.classification }</td>
+		        <td>${movie2.language }</td>
+		        <td>${movie2.showdate}</td>
 		    <tr>
 				<td>Top3</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie3.moviename}</td>
+		        <td>${movie3.director}</td>
+		        <td>${movie3.actor }</td>
+		        <td>${movie3.classification }</td>
+		        <td>${movie3.language }</td>
+		        <td>${movie3.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top4</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie4.moviename}</td>
+		        <td>${movie4.director}</td>
+		        <td>${movie4.actor }</td>
+		        <td>${movie4.classification }</td>
+		        <td>${movie4.language }</td>
+		        <td>${movie4.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top5</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie5.moviename}</td>
+		        <td>${movie5.director}</td>
+		        <td>${movie5.actor }</td>
+		        <td>${movie5.classification }</td>
+		        <td>${movie5.language }</td>
+		        <td>${movie5.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top6</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie6.moviename}</td>
+		        <td>${movie6.director}</td>
+		        <td>${movie6.actor }</td>
+		        <td>${movie6.classification }</td>
+		        <td>${movie6.language }</td>
+		        <td>${movie6.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top7</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie7.moviename}</td>
+		        <td>${movie7.director}</td>
+		        <td>${movie7.actor }</td>
+		        <td>${movie7.classification }</td>
+		        <td>${movie7.language }</td>
+		        <td>${movie7.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top8</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie8.moviename}</td>
+		        <td>${movie8.director}</td>
+		        <td>${movie8.actor }</td>
+		        <td>${movie8.classification }</td>
+		        <td>${movie8.language }</td>
+		        <td>${movie8.showdate}</td>
 		    </tr>
 		    <tr>
 				<td>Top9</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
-		    </tr>
+		        <td>${movie9.moviename}</td>
+		        <td>${movie9.director}</td>
+		        <td>${movie9.actor }</td>
+		        <td>${movie9.classification }</td>
+		        <td>${movie9.language }</td>
+		        <td>${movie9.showdate}</td>		    </tr>
 		    <tr>
 				<td>Top10</td>
-		        <td>肖申克的救赎</td>
-		        <td>导演名</td>
-		        <td>主演名</td>
-		        <td>剧情</td>
-		        <td>英语</td>
-		        <td>年份</td>
+		        <td>${movie10.moviename}</td>
+		        <td>${movie10.director}</td>
+		        <td>${movie10.actor }</td>
+		        <td>${movie10.classification }</td>
+		        <td>${movie10.language }</td>
+		        <td>${movie10.showdate}</td>
 		    </tr>
 		</table></div>
 	</div>
