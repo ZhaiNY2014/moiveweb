@@ -45,6 +45,8 @@ public class MovieInfoController {
 		session.setAttribute("moviescore", movie.getScore_D().toString());
 		session.setAttribute("movieprice", movie.getprice_i().toString());
 		
+		sjc.AddHit(moviename);
+		
 		mv.setViewName("movieinfo");
 		return mv;
 	}

@@ -15,7 +15,7 @@ import javafx.scene.input.KeyCombination.ModifierValue;
 public class Top10Controller {
 	
 	@RequestMapping(value = "/Top10")
-	public ModelAndView Top10(){
+	public ModelAndView Top10() throws Exception{
 		ModelAndView mv = new ModelAndView();
 		SpringjdbcConfig sjc = new SpringjdbcConfig();
 		ArrayList<MovieModel> moviearray = new ArrayList<>();

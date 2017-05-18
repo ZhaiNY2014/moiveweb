@@ -17,7 +17,7 @@ public class MovieModel implements Serializable{
 	private String showdate = "";
 	private double score = 0.00;
 	private int price = 10;
-	
+	private int hit;
 	
 	public MovieModel(){
 	}
@@ -133,5 +133,13 @@ public class MovieModel implements Serializable{
 	public Integer getprice_i(){
 		Integer price_i = new Integer(price);
 		return price_i;
+	}
+
+	public int getHit() {
+		return hit;
+	}
+
+	public void setHit(int hit) {
+		this.hit = hit;
 	}
 }

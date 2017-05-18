@@ -1,14 +1,13 @@
 package com.moviemanager.web.jdbc;
 
-import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
+
 
 import com.moviemanager.web.model.MovieModel;
 import com.moviemanager.web.model.UserModel;
@@ -79,33 +78,46 @@ public class SpringjdbcConfig {
 	 * 该函数用于top10的搜索
 	 * @return ArrayList<MovieModel>
 	 */
-	public ArrayList<MovieModel> SelectRank(){
-		String sql = "Select * from movieinfo where rank <= 10";
+	public ArrayList<MovieModel> SelectRank() throws Exception{
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
 		Connection con = null;
 		MovieModel movie = new MovieModel();
 		ArrayList<MovieModel> movielist = new ArrayList<>();
-		try{
-		con = dbutil.Getcon();
-		pstm = (PreparedStatement) con.prepareStatement(sql);
-		rs = pstm.executeQuery(sql);
-		
-		while(rs.next()){
-			String showdate = movie.getShowdate(rs.getInt("showdate"));
-			movielist.add(new MovieModel(rs.getInt("movieid"), rs.getString("moviename"), 
-					rs.getString("director"), rs.getString("actor"),rs.getString("classification"), rs.getString("country"), 
-					rs.getString("language"),showdate, rs.getDouble("score")));
-			for(MovieModel movie1:movielist){
-				System.out.println(movie1.getMoviename());
+		int[] hitlist = new int[50];
+		//获取全部的hit值
+		String sql1 = "Select * from movieinfo";// where rank <= 10";
+			con = dbutil.Getcon();
+			pstm = (PreparedStatement) con.prepareStatement(sql1);
+			rs = pstm.executeQuery(sql1);
+			int i = 0;
+			while(rs.next()){
+/*				String showdate = movie.getShowdate(rs.getInt("showdate"));
+				movielist.add(new MovieModel(rs.getInt("movieid"), rs.getString("moviename"), 
+						rs.getString("director"), rs.getString("actor"),rs.getString("classification"), rs.getString("country"), 
+						rs.getString("language"),showdate, rs.getDouble("score")));
+//				for(MovieModel movie1:movielist){
+//					System.out.println(movie1.getMoviename());}
+*/				//获取hit序列
+				hitlist[i] = rs.getInt("hit");
+				i++;
 			}
-		}	
-		}catch(SQLException ex){
-			System.out.println("SQLException:"+ex.getMessage());
-		} catch (Throwable e) {
-			e.printStackTrace();
-		}
+			//排序
+			hitlist = OrderHit(hitlist);
+//			for(i = 0;i<hitlist.length;i++)
+//				System.out.println(hitlist[i]);
+			for(i = 0;i < 10;i++){
+				String sql2 = "Select * from movieinfo where hit ="+ hitlist[i];
+				pstm = (PreparedStatement) con.prepareStatement(sql2);
+				rs = pstm.executeQuery(sql2);
+				while(rs.next()){
+					String showdate = movie.getShowdate(rs.getInt("showdate"));
+					movielist.add(new MovieModel(rs.getInt("movieid"), rs.getString("moviename"), 
+							rs.getString("director"), rs.getString("actor"),rs.getString("classification"), rs.getString("country"), 
+							rs.getString("language"),showdate, rs.getDouble("score")));
+				}
+			}
 		return movielist;
 	}
 	
@@ -159,7 +171,7 @@ public class SpringjdbcConfig {
 		con = dbutil.Getcon();
 		pstm = (PreparedStatement) con.prepareStatement(sql);
 		rs = pstm.executeUpdate();
-		System.out.println(rs);
+		//System.out.println(rs);
 		return rs;
 	}
 	
@@ -181,5 +193,36 @@ public class SpringjdbcConfig {
 		if(rs > 0)
 			pstm=(PreparedStatement) con.prepareStatement("update users set ");
 		return rs;
+	}
+	
+	public int[] OrderHit(int[] hitlist){
+		int[] hitlist_O;
+		hitlist_O = hitlist;
+		int size = hitlist_O.length;
+		int temp;
+		for(int i = 0;i < size;i++){
+			int k = i;
+			for(int j = size - 1;j>i;j--){
+				if(hitlist_O[j] > hitlist_O[k])
+					k=j;
+			}
+			temp = hitlist_O[i];
+			hitlist_O[i] = hitlist_O[k];
+			hitlist_O[k] = temp;
+		}
+		return hitlist_O;
+	}
+	
+	public void AddHit(String moviename) throws Exception{
+		PreparedStatement pstm = null;
+		SpringjdbcConfig dbutil = new SpringjdbcConfig();
+		Connection con = null;
+		String movienameutf8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
+		String sql = "update movieinfo set hit = hit + 1 where moviename = \"" + movienameutf8 + "\"";
+		System.out.println(sql);
+		
+		con = dbutil.Getcon();
+		pstm = (PreparedStatement) con.prepareStatement(sql);
+		pstm.executeUpdate();
 	}
 }
