@@ -12,7 +12,7 @@ import com.moviemanager.web.model.UserModel;
 @Controller
 public class BuyPageController {
 
-	@RequestMapping(value = "/buy")
+	@RequestMapping(value = "/buying")
 	public ModelAndView BuyPage(HttpSession session) throws Exception{
 		ModelAndView mv = new ModelAndView();
 		if(session.getAttribute("islogin").toString().equals("islogin")){//判断是否已登录
@@ -21,7 +21,11 @@ public class BuyPageController {
 //			UserModel user = sjc.SelectUser(session.getAttribute("username").toString());
 //			UserModel user = new UserModel();
 			int account = Integer.valueOf(session.getAttribute("account").toString()).intValue();  
-			int userid = Integer.valueOf(session.getAttribute("userid").toString());
+			int userid = Integer.valueOf(session.getAttribute("userid").toString()).intValue();
+			System.out.println("sessionaccount:"+session.getAttribute("account").toString());
+			System.out.println("username:"+ session.getAttribute("username").toString());
+			System.out.println("moviename:"+ session.getAttribute("moviename").toString());
+			System.out.println(account);
 			if(account >= 10){
 				//更新Account
 				account -=10;
@@ -30,21 +34,33 @@ public class BuyPageController {
 					//写入一条记录
 					Integer account_i = new Integer(account);
 					session.setAttribute("account", account_i.toString());
+					System.out.println("moviename:"+ session.getAttribute("moviename").toString());
 					int rs2 = sjc.InsertBoughtlog(session.getAttribute("username").toString(), session.getAttribute("moviename").toString());
 					if(rs2 <=0)
 						System.out.println("log fail");
 					else
 						mv.setViewName("buysuccess");
-				}else
+				}else{
 					mv.addObject("message", "db error");
 					mv.setViewName("/buyfail_a");
-			}else
+				}
+			}else{
 				mv.addObject("message", "余额不足");
 				mv.setViewName("/buyfail_a");
+			}
 		}else{
 			mv.setViewName("/buyfail_l");//未登录，返回登录
 		}
 			
+		return mv;
+	}
+	
+	@RequestMapping(value="/buyinfo")
+	public ModelAndView BuyingPage(){
+		ModelAndView mv = new ModelAndView();
+		
+		
+		mv.setViewName("buyinfo");
 		return mv;
 	}
 }

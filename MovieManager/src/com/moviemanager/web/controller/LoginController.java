@@ -45,9 +45,9 @@ public class LoginController {
 				session.setAttribute("account", user_db.getAccount_I().toString());
 				session.setAttribute("islogin", "islogin");
 				mv.addObject("user", user.getUsername());
-				mv.setViewName("/Login/haslogin");
+				mv.setViewName("/haslogin");
 			}else{
-				mv.setViewName("/Login/fail");
+				mv.setViewName("/fail");
 			}
 
 		}
@@ -61,7 +61,7 @@ public class LoginController {
 		if(session.getAttribute("islogin").equals("nologin")){
 			mv.addObject("status1", "未登录");
 			//session.setAttribute("islogin", "islogin");
-			mv.setViewName("/Login/login");
+			mv.setViewName("/login");
 		}else
 			mv.setViewName("/main");
 		return mv;

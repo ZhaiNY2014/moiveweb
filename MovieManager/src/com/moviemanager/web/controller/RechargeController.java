@@ -12,7 +12,7 @@ import com.moviemanager.web.jdbc.SpringjdbcConfig;
 @Controller
 public class RechargeController {
 	
-	@RequestMapping(value="/recharge")
+	@RequestMapping(value="/hasrecharge")
 	public ModelAndView Recharge(HttpSession session,
 			@RequestParam(value="username_r",required=true)String username_r,
 			@RequestParam(value="recharge",required=true)String recharge) throws Exception{
@@ -30,7 +30,15 @@ public class RechargeController {
 			mv.addObject("rechargeresult", "充值失败");
 		}
 		
-		mv.setViewName("/buy");
+		mv.setViewName("/hasrecharge");
+		return mv;
+	}
+	
+	@RequestMapping(value="/recharge")
+	public ModelAndView Recharge(){
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("/recharge");
 		return mv;
 	}
 }

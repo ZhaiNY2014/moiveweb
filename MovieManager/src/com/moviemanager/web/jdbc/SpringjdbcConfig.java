@@ -138,7 +138,7 @@ public class SpringjdbcConfig {
 	
 	public int UpdateUserAccountForBuy(int account_new, int userid) throws Exception{
 		int rs = 0;
-		String sql = "update users set account=" + account_new + "where UserID=" + userid;
+		String sql = "update users set account=account" + account_new + " where UserID=" + userid;
 		System.out.println(sql);
 		PreparedStatement pstm = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
@@ -153,7 +153,7 @@ public class SpringjdbcConfig {
 	
 	public int UpdateUserAccountForRecharge(int recharge, String username) throws Exception{
 		int rs = 0;
-		String sql = "update users set account=account+" + recharge + "where username=" + "\"" + username + "\"";
+		String sql = "update users set account=account+" + recharge + " where username=" + "\"" + username + "\"";
 		System.out.println(sql);
 		PreparedStatement pstm = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
@@ -168,9 +168,10 @@ public class SpringjdbcConfig {
 	
 	public int InsertBoughtlog(String username,String moviename) throws Exception{
 		int rs=0;
-		String usernameuft8 = new String(username.getBytes("ISO-8859-1"),"utf-8");
-		String movienameuft8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
-		String sql = "insert into boughtlog values(null,\""+ usernameuft8 + "\",\""+ movienameuft8 + "\")" ;
+		//String usernameuft8 = new String(username.getBytes("ISO-8859-1"),"utf-8");
+		//String movienameuft8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
+		//System.out.println(movienameuft8);
+		String sql = "insert into boughtlog values(null,\""+ username + "\",\""+ moviename + "\")" ;
 		System.out.println(sql);
 		PreparedStatement pstm = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
@@ -179,7 +180,9 @@ public class SpringjdbcConfig {
 		con = dbutil.Getcon();
 		pstm = (PreparedStatement) con.prepareStatement(sql);
 		rs = pstm.executeUpdate();
-		System.out.println(rs);
+//		System.out.println(rs);
+		if(rs > 0)
+			pstm=(PreparedStatement) con.prepareStatement("update users set ");
 		return rs;
 	}
 }

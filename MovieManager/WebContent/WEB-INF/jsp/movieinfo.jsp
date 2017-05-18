@@ -34,7 +34,7 @@
 		        <td>${movie.language}</td>
 		        <td>${movie.country }</td>
 		        <td>${movie.showdate }</td>
-		        <td><input type="button" onclick="window.location.href='./buy'" value="购买"> (${movie.price}元)</td>
+		        <td><input type="button" onclick="window.location.href='./buyinfo'" value="购买"> (${movie.price}元)</td>
 		    </tr>
 		    
 		</table></div>

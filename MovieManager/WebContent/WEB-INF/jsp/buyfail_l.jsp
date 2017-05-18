@@ -8,6 +8,8 @@
 </head>
 <body>
 点击登录
-<input type="button" onclick="window.location.href='./login'" value="登录">
+<form action="./login" method="post">
+<input type="submit" value="登录">
+</form>
 </body>
 </html>

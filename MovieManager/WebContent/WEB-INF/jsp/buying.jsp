@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-登录成功！<p>
-欢迎！   ${user}   点击回到主页面
-<form action="./main" method="post">
-<input type="submit" value="返回">
-</form>
+
 </body>
 </html>

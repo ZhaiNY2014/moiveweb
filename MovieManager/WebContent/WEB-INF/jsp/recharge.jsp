@@ -7,7 +7,7 @@
 <title>充值</title>
 </head>
 <body>
-<form action="/buy" method="get">
+<form action="./hasrecharge" method="get">
 要充值的用户名：<input type="text" name="username_r">
 要充值的金额：<input type="text" name="recharge">
 <input type="submit" value="充值">
