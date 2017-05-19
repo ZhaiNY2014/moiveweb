@@ -243,4 +243,69 @@ public class SpringjdbcConfig {
 		rs = pstm.executeUpdate();
 		return rs;
 	}
+	
+	public ArrayList<MovieModel> MovieList(int page) throws Exception{
+		ArrayList<MovieModel> movielist = new ArrayList<>();
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		SpringjdbcConfig dbutil = new SpringjdbcConfig();
+		Connection con = null;
+		MovieModel movie = new MovieModel();
+
+		int min = 0;
+		int max = 0;
+		if(page == 1){
+			min = 0;
+			max = 10;
+		}else if(page == 2){
+			min = 10;
+			max = 20;
+		}else if(page == 3){
+			min = 20;
+			max = 30;
+		}else if(page == 4){
+			min = 30;
+			max = 40;
+		}else if(page == 5){
+			min = 40;
+			max = 50;
+		}
+		String sql = "SELECT * FROM movieinfo where movieid >"+min+" and movieid <="+max;
+		
+		con = dbutil.Getcon();
+		pstm = (PreparedStatement) con.prepareStatement(sql);
+		rs = pstm.executeQuery(sql);
+		
+		while(rs.next()){
+			String showdate = movie.getShowdate(rs.getInt("showdate"));
+			movielist.add(new MovieModel(rs.getInt("movieid"), rs.getString("moviename"), 
+					rs.getString("director"), rs.getString("actor"),rs.getString("classification"), rs.getString("country"), 
+					rs.getString("language"),showdate, rs.getDouble("score")));
+		}
+		
+		return movielist;
+	}
+	
+	public String SelectUserMovie(String username) throws Exception{
+		ArrayList<MovieModel> movielist = new ArrayList<>();
+		String mylist = "";
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		SpringjdbcConfig dbutil = new SpringjdbcConfig();
+		Connection con = null;
+		
+		String usernameutf8 = new String(username.getBytes("ISO-8859-1"),"utf-8");
+		String sql = "Select moviename from boughtlog where username = \""+ usernameutf8 + "\"";
+		System.out.println(sql);
+		
+		con = dbutil.Getcon();
+		pstm = (PreparedStatement) con.prepareStatement(sql);
+		rs = pstm.executeQuery(sql);
+		
+		while(rs.next()){
+			mylist = mylist + rs.getString("moviename") + " ";
+		}
+		
+		return mylist;
+	}
 }

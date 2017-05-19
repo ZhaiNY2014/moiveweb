@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>我的电影</title>
 </head>
 <body>
-登录成功！<p>
-欢迎！   ${user}   点击回到主页面
-<form action="./main" method="post">
-<input type="submit" value="返回">
-</form><p>
-<a href="./mylist"> 查看我已经有的影片</a>
+用户<% String username = (String)session.getAttribute("username");
+out.print(username); %><p>
+${mylist}<p>
+<form  action="./main">
+		<input type="submit" value="返回">
+		</form>
 </body>
 </html>

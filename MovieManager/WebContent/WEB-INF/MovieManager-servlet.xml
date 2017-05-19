@@ -29,4 +29,5 @@
 	<bean class="com.moviemanager.web.controller.BuyPageController"/>
 	<bean class="com.moviemanager.web.controller.RechargeController"/>
 	<bean class="com.moviemanager.web.controller.RegisterController"/>
+	<bean class="com.moviemanager.web.controller.MylistController"/>
 </beans>

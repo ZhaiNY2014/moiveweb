@@ -15,7 +15,7 @@
 		out.print(username);%><br>
 		<% String account=(String)session.getAttribute("account");
 		out.print(account);%>元<br>
-		<a href="">我的电影</a><br>
+		<a href="./mylist">我的电影</a><br>
 		<a href="./recharge">我要充值</a><br></div>
 		<div id="content" style="float:left;">
 			<div id="movie" >
