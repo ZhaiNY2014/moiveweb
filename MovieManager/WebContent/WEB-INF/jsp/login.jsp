@@ -9,7 +9,7 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/%E8%B6%85%E7%BA%A7%E7%94%B5%E5%BD%B1.jpg);
+	background-image: url(../../../../../../Desktop/movie.jpg);
 	background-repeat: no-repeat;
 }
 -->

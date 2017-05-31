@@ -8,7 +8,7 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../img/超级电影.jpg);
+	background-image: url(../../../../../../Desktop/movie.jpg);
 	background-repeat: no-repeat;
 }
 -->

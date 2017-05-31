@@ -8,7 +8,7 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/%E8%B6%85%E7%BA%A7%E7%94%B5%E5%BD%B1.jpg);
+	background-image: url(../../../../../../Desktop/movie.jpg);
 	background-repeat: no-repeat;
 }
 -->
@@ -22,7 +22,7 @@ body {
 	<div id="table" style="margin:0 auto;display:table-cell;vertical-align: middle;">
 		<table border=1>
 			<tr>
-				<th width="67">序号</th>
+				<th width="67">TOP</th>
 				<th width="194">电影名</th>
 				<th width="212">导演</th>
 				<th width="408">主演</th>
@@ -31,7 +31,7 @@ body {
 				<th width="208">上映年份</th>
 			</tr>
 			<tr>
-				<td height="60">1</td>
+				<td height="60">Top1</td>
 		        <td>${movie1.moviename}</td>
 		        <td>${movie1.director}</td>
 		        <td>${movie1.actor }</td>
@@ -40,7 +40,7 @@ body {
 		        <td>${movie1.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">2</td>
+				<td height="60">Top2</td>
 		        <td>${movie2.moviename}</td>
 		        <td>${movie2.director}</td>
 		        <td>${movie2.actor }</td>
@@ -48,7 +48,7 @@ body {
 		        <td>${movie2.language }</td>
 		        <td>${movie2.showdate}</td>
 		    <tr>
-				<td height="60">3</td>
+				<td height="60">Top3</td>
 		        <td>${movie3.moviename}</td>
 		        <td>${movie3.director}</td>
 		        <td>${movie3.actor }</td>
@@ -57,7 +57,7 @@ body {
 		        <td>${movie3.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">4</td>
+				<td height="60">Top4</td>
 		        <td>${movie4.moviename}</td>
 		        <td>${movie4.director}</td>
 		        <td>${movie4.actor }</td>
@@ -66,7 +66,7 @@ body {
 		        <td>${movie4.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">5</td>
+				<td height="60">Top5</td>
 		        <td>${movie5.moviename}</td>
 		        <td>${movie5.director}</td>
 		        <td>${movie5.actor }</td>
@@ -75,7 +75,7 @@ body {
 		        <td>${movie5.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">6</td>
+				<td height="60">Top6</td>
 		        <td>${movie6.moviename}</td>
 		        <td>${movie6.director}</td>
 		        <td>${movie6.actor }</td>
@@ -84,7 +84,7 @@ body {
 		        <td>${movie6.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">7</td>
+				<td height="60">Top7</td>
 		        <td>${movie7.moviename}</td>
 		        <td>${movie7.director}</td>
 		        <td>${movie7.actor }</td>
@@ -93,7 +93,7 @@ body {
 		        <td>${movie7.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">8</td>
+				<td height="60">Top8</td>
 		        <td>${movie8.moviename}</td>
 		        <td>${movie8.director}</td>
 		        <td>${movie8.actor }</td>
@@ -102,7 +102,7 @@ body {
 		        <td>${movie8.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">9</td>
+				<td height="60">Top9</td>
 		        <td>${movie9.moviename}</td>
 		        <td>${movie9.director}</td>
 		        <td>${movie9.actor }</td>
@@ -110,7 +110,7 @@ body {
 		        <td>${movie9.language }</td>
 		        <td>${movie9.showdate}</td>		    </tr>
 		    <tr>
-				<td height="60">10</td>
+				<td height="60">Top10</td>
 		        <td>${movie10.moviename}</td>
 		        <td>${movie10.director}</td>
 		        <td>${movie10.actor }</td>
@@ -132,6 +132,5 @@ body {
 		</table>	
 		</div>
 	</div>
-</div>
 </body>
 </html>

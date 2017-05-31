@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>超级电影网</title>
 <style type="text/css">
-<!--
+
 body {
-	background-image: url(../../../../../../Desktop/%E8%B6%85%E7%BA%A7%E7%94%B5%E5%BD%B1.jpg);
+	background-image: url(/MovieManager/img/movie.jpg);
 	background-repeat: no-repeat;
 }
--->
+
 </style></head>
 <body>
 	<% 

@@ -8,7 +8,7 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/%E5%A4%B1%E8%B4%A5.jpg);
+	background-image: url(../../../../../../Desktop/failed.jpg);
 	background-repeat: no-repeat;
 }
 -->
