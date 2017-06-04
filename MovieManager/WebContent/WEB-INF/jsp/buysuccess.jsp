@@ -8,8 +8,9 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/success.jpg);
+	background-image: url(/MovieManager/img/success.jpg);
 	background-repeat: no-repeat;
+	background-size: 100%;
 }
 -->
 </style></head>

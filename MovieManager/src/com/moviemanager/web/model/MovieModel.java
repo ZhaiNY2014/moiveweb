@@ -3,10 +3,13 @@ package com.moviemanager.web.model;
 import java.io.Serializable;
 
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 @Component
 public class MovieModel implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2042694536446708308L;
 	private int movieId;
 	private String moviename = "";
 	private String director = "";

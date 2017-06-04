@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>电影清单</title>
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/movie.jpg);
+	background-image: url(/MovieManager/img/movie.jpg);
 	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 -->
 </style></head>
@@ -22,7 +23,7 @@ body {
 	<div id="table" style="margin:0 auto;display:table-cell;vertical-align: middle;">
 		<table border=1>
 			<tr>
-				<th width="67">TOP</th>
+				<th width="67"></th>
 				<th width="194">电影名</th>
 				<th width="212">导演</th>
 				<th width="408">主演</th>
@@ -31,7 +32,7 @@ body {
 				<th width="208">上映年份</th>
 			</tr>
 			<tr>
-				<td height="60">Top1</td>
+				<td height="60">41</td>
 		        <td>${movie1.moviename}</td>
 		        <td>${movie1.director}</td>
 		        <td>${movie1.actor }</td>
@@ -40,7 +41,7 @@ body {
 		        <td>${movie1.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">Top2</td>
+				<td height="60">42</td>
 		        <td>${movie2.moviename}</td>
 		        <td>${movie2.director}</td>
 		        <td>${movie2.actor }</td>
@@ -48,7 +49,7 @@ body {
 		        <td>${movie2.language }</td>
 		        <td>${movie2.showdate}</td>
 		    <tr>
-				<td height="60">Top3</td>
+				<td height="60">43</td>
 		        <td>${movie3.moviename}</td>
 		        <td>${movie3.director}</td>
 		        <td>${movie3.actor }</td>
@@ -57,7 +58,7 @@ body {
 		        <td>${movie3.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">Top4</td>
+				<td height="60">44</td>
 		        <td>${movie4.moviename}</td>
 		        <td>${movie4.director}</td>
 		        <td>${movie4.actor }</td>
@@ -66,7 +67,7 @@ body {
 		        <td>${movie4.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">Top5</td>
+				<td height="60">45</td>
 		        <td>${movie5.moviename}</td>
 		        <td>${movie5.director}</td>
 		        <td>${movie5.actor }</td>
@@ -75,7 +76,7 @@ body {
 		        <td>${movie5.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">Top6</td>
+				<td height="60">46</td>
 		        <td>${movie6.moviename}</td>
 		        <td>${movie6.director}</td>
 		        <td>${movie6.actor }</td>
@@ -84,7 +85,7 @@ body {
 		        <td>${movie6.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">Top7</td>
+				<td height="60">47</td>
 		        <td>${movie7.moviename}</td>
 		        <td>${movie7.director}</td>
 		        <td>${movie7.actor }</td>
@@ -93,7 +94,7 @@ body {
 		        <td>${movie7.showdate}</td>
 		    </tr>
 		    <tr>
-				<td height="60">Top8</td>
+				<td height="60">48</td>
 		        <td>${movie8.moviename}</td>
 		        <td>${movie8.director}</td>
 		        <td>${movie8.actor }</td>
@@ -107,7 +108,9 @@ body {
 		<tr>
 		<td><form  action="./movielist4">
 		<input type="submit" value="上一页">
-		</form></td>
+		</form>
+		</td>
+		<td></td>
 		<td><form  action="./main">
 		<input type="submit" value="返回">
 		</form></td>
@@ -115,5 +118,6 @@ body {
 		</table>	
 		</div>
 	</div>
+</div>
 </body>
 </html>

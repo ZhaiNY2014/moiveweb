@@ -11,5 +11,6 @@ encoding//WebContent/WEB-INF/jsp/movielist2.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/recharge.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/register.jsp=UTF-8
 encoding//WebContent/WEB-INF/jsp/registerfail.jsp=UTF-8
+encoding//WebContent/WEB-INF/jsp/success.jsp=UTF-8
 encoding/<project>=UTF-8
 separateDerivedEncodings=true

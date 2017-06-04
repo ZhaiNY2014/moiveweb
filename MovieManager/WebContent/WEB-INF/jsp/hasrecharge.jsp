@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>充值成功</title>
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/movie.jpg);
+	background-image: url(/MovieManager/img/movie.jpg);
 	background-repeat: no-repeat;
+	background-size: 100%;
 }
 -->
 </style></head>

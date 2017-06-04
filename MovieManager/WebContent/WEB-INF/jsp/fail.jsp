@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title>登录失败！</title>
 <style type="text/css">
 <!--
 body {
-	background-image: url(../../../../../../Desktop/failed.jpg);
+	background-image: url(/MovieManager/img/failed.jpg);
 	background-repeat: no-repeat;
-}
+	background-size: 100%;}
 -->
 </style></head>
 <body>

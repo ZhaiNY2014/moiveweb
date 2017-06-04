@@ -8,8 +8,9 @@
 <style type="text/css">
 <!--
 body {
-	background-image: url(/MovieManager/img/movie.jpg );
+	background-image: url(/MovieManager/img/movie.jpg);
 	background-repeat: no-repeat;
+	background-size: 100% 100%;
 }
 -->
 </style></head>
@@ -127,7 +128,7 @@ body {
 		<input type="submit" value="返回">
 		</form></td>
 		</tr>
-		</table>	
+		</table>
 		</div>
 </div>
 </body>

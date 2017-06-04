@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.moviemanager.web.jdbc.SpringjdbcConfig;
-import com.moviemanager.web.model.UserModel;
 
 @Controller
 public class RegisterController {

@@ -1,12 +1,10 @@
 package com.moviemanager.web.jdbc;
 
-import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 
@@ -287,7 +285,7 @@ public class SpringjdbcConfig {
 	}
 	
 	public String SelectUserMovie(String username) throws Exception{
-		ArrayList<MovieModel> movielist = new ArrayList<>();
+		
 		String mylist = "";
 		PreparedStatement pstm = null;
 		ResultSet rs = null;

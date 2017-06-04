@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.moviemanager.web.jdbc.SpringjdbcConfig;
-import com.moviemanager.web.model.UserModel;
 
 @Controller
 public class BuyPageController {

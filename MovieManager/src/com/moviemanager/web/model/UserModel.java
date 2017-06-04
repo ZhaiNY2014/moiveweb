@@ -2,13 +2,11 @@ package com.moviemanager.web.model;
 
 import java.io.Serializable;
 
-import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.NotEmpty;
-
-import com.sun.corba.se.spi.servicecontext.UEInfoServiceContext;
-
 public class UserModel implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2145516858482619768L;
 	private int userid;
 	//@Size(min=6,max=16)
 	private String username;

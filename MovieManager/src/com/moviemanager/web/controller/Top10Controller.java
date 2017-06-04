@@ -9,8 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 import com.moviemanager.web.jdbc.SpringjdbcConfig;
 import com.moviemanager.web.model.MovieModel;
 
-import javafx.scene.input.KeyCombination.ModifierValue;
-
 @Controller
 public class Top10Controller {
 	
