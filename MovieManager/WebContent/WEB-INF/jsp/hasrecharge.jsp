@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>充值成功</title>
+<title>充值结果</title>
 <style type="text/css">
 <!--
 body {

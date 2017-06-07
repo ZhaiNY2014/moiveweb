@@ -13,8 +13,6 @@ import com.moviemanager.web.jdbc.SpringjdbcConfig;
 import com.moviemanager.web.model.UserModel;
 
 
-
-
 @Controller
 public class LoginController {
 	
@@ -60,4 +58,11 @@ public class LoginController {
 			mv.setViewName("/main");
 		return mv;
  	}
+	
+	public String GetMd5String(String password){
+		String md5 = "";
+		
+		
+		return md5;
+	}
 }
