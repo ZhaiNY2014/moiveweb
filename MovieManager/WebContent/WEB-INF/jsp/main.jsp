@@ -16,9 +16,7 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			<h1 class="text-center">
-				超级电影网
-			</h1>
+			 
 			<div class="row clearfix">
 				<div class="col-md-2 column">
 					<ul class="nav nav-stacked nav-tabs">
@@ -38,27 +36,29 @@
 					</ul>
 				</div>
 				<div class="col-md-8 column">
-					<form role="form">
+					<form role="form" action="./movieinfo" method="get">
 						<div class="form-group">
-							 <label for="moviename">想看什么电影</label><input type="email" class="form-control" id="moviename" />
+							 <label for="moviename">想看什么电影</label>
+							 <input type="text" class="form-control" id="moviename" name="moviename" />
 						</div>
 						<button type="submit" class="btn btn-default">搜索一下</button>
 					</form>
 				</div>
-				<div class="col-md-2 column">
+				<div class="col-md-2 column" align="right">
 					<form class="form-horizontal">
 						<div class="form-group">
 						
-							<a class="btn btn-default" href="#" role="button"><% String islogin = "";
+							<a class="btn btn-default btn-link" href="./login" role="button">
+	<% String islogin = "";
 	if(session.getAttribute("islogin").equals("nologin")){
 		islogin = "登录";
 	}else{
 		String username = (String)session.getAttribute("username");
 		islogin = username;
-	} %>out.print(islogin)</a>
+	} out.print(islogin);%></a>
 						</div>
 						<div class="form-group">
-							<a class="btn btn-default" href="#" role="button">Link</a>
+							<a class="btn btn-default btn-link" href="./register" role="button">注册</a>
 						</div>
 					</form>
 				</div>

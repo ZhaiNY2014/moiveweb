@@ -16,10 +16,10 @@ public class MylistController {
 		ModelAndView mv = new ModelAndView();
 		
 		SpringjdbcConfig sjc = new SpringjdbcConfig();
-		String mylist = " ";
+		String mylist = "";
 		mylist = sjc.SelectUserMovie(session.getAttribute("username").toString());
-		
-		if(mylist.equals(" "))
+		System.out.println("mylist"+ mylist);
+		if(mylist.equals(""))
 			mylist = "没有购买过电影";
 		else
 			mylist = "拥有的电影有："+mylist;
