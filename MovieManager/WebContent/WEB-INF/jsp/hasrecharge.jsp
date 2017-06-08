@@ -4,23 +4,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>充值成功</title>
+<link type="text/css" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/JQuery/jquery-3.2.1.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+<title>充值结果</title>
 <style type="text/css">
-<!--
-body {
-	background-image: url(/MovieManager/img/movie.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-}
--->
-</style></head>
+
+</style>
+</head>
 <body>
-<div align="center">${rechargeresult}
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="text-center">
+				${rechargeresult}
+			</h3>
+			<div>
+			<table>
+				<tr>
+					<td><form  action="./main">
+					<input class="btn btn-default" type="submit" value="返回">
+					</form></td>
+				</tr>
+			</table>	
+		</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <div align="center">${rechargeresult}
 </div>
 <form action="./main" method="post">
   <div align="center">
     <input type="submit" value="返回">
   </div>
-</form>
+</form> -->
 </body>
 </html>

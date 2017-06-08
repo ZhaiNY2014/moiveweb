@@ -26,23 +26,31 @@ public class BuyPageController {
 			System.out.println("moviename:"+ session.getAttribute("moviename").toString());
 			System.out.println(account);
 			if(account >= 10){
-				//更新Account
-				account -=10;
-				int rs1 = sjc.UpdateUserAccountForBuy(-10, userid);
-				if(rs1 > 0){//扣款成功
-					//写入一条记录
-					Integer account_i = new Integer(account);
-					session.setAttribute("account", account_i.toString());
-					System.out.println("moviename:"+ session.getAttribute("moviename").toString());
-					int rs2 = sjc.InsertBoughtlog(session.getAttribute("username").toString(), session.getAttribute("moviename").toString());
-					if(rs2 <=0)
-						System.out.println("log fail");
-					else
-						mv.setViewName("buysuccess");
+				
+				if(sjc.IshasBuy(session.getAttribute("username").toString(), session.getAttribute("moviename").toString()) == 0){
+					//更新Account
+					account -=10;
+					int rs1 = sjc.UpdateUserAccountForBuy(-10, userid);
+					if(rs1 > 0){//扣款成功
+						//写入一条记录
+						Integer account_i = new Integer(account);
+						session.setAttribute("account", account_i.toString());
+						System.out.println("moviename:"+ session.getAttribute("moviename").toString());
+						int rs2 = sjc.InsertBoughtlog(session.getAttribute("username").toString(), session.getAttribute("moviename").toString());
+						if(rs2 <=0)
+							System.out.println("log fail");
+						else
+							mv.setViewName("buysuccess");
+					}else{
+						mv.addObject("message", "db error");
+						mv.setViewName("/buyfail_a");
+					}
 				}else{
-					mv.addObject("message", "db error");
+					mv.addObject("message","已经购买了这部电影");
 					mv.setViewName("/buyfail_a");
 				}
+				
+				
 			}else{
 				mv.addObject("message", "余额不足");
 				mv.setViewName("/buyfail_a");

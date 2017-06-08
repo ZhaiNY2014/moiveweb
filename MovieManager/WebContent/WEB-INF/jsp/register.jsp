@@ -4,17 +4,57 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/JQuery/jquery-3.2.1.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 <title>注册</title>
 <style type="text/css">
 <!--
-body {
-	background-image: url(/MovieManager/img/movie.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%
-}
+
 -->
 </style></head>
 <body>
+
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 "text-center">
+				 请填写用户名 密码
+			</h3>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<form class="form-horizontal" role="form" action="./hasregister"  method="post">
+				<div class="form-group">
+					 <label for="用户名" class="col-sm-2 control-label">用户名</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="username" name="username"/>
+					</div>
+				</div>
+				<div class="form-group">
+					 <label for="密码" class="col-sm-2 control-label">密码</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="password" name="password"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						 <button type="submit" class="btn btn-default">注册</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<!-- 
 <form  action="./hasregister"  method="post">
     <div class="one" id="one">
       <div align="center">用户名： 
@@ -31,6 +71,6 @@ body {
 	    <input type="submit" value="注册">
       </div>
 	</div>
-</form>
+</form> -->
 </body>
 </html>

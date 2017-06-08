@@ -6,18 +6,89 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/JQuery/jquery-3.2.1.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 <title>超级电影网-电影详情</title>
 <style type="text/css">
-<!--
-body {
-	background-image: url(/MovieManager/img/movie.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% 100%;
-}
--->
+
 </style></head>
 <body>
-	<div id="container" >
+
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h1 align="center">
+				超级电影网
+			</h1>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="col-md-2 column"></div>
+			<div class="col-md-8 column">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>
+								评分
+							</th>
+							<th>
+								电影名
+							</th>
+							<th>
+								导演
+							</th>
+							<th>
+								主演
+							</th>
+							<th>
+								类型
+							</th>
+							<th>
+								语言
+							</th>
+							<th>
+								上映国家
+							</th>
+							<th>
+								上映年份
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>${movie.score }</td>
+					      	<td>${movie.moviename}</td>
+					        <td>${movie.director }</td>
+					        <td>${movie.actor }</td>
+					        <td>${movie.classification }</td>
+					        <td>${movie.language}</td>
+					        <td>${movie.country }</td>
+					        <td>${movie.showdate }</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="col-md-2 column"></div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="col-md-1 column"></div>
+			<div class="col-md-1 column"></div>
+			<div class="col-md-1 column"></div>
+			<div class="col-md-6 column">
+				<a class="btn btn-default btn-block" href="./buyinfo" role="button">想看</a>
+			</div>
+			<div class="col-md-1 column"></div>
+			<div class="col-md-1 column"></div>
+			<div class="col-md-1 column"></div>
+		</div>
+	</div>
+
+
+<!--	<div id="container" >
 	<div id="header" >
 		<blockquote>
 		  <h1 align="center" style="margin:0 auto;">超级电影网</h1>
@@ -49,6 +120,6 @@ body {
 		    
 		</table></div>
 	</div>
-</div>
+</div>-->
 </body>
 </html>

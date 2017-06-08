@@ -4,21 +4,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/JQuery/jquery-3.2.1.js"></script> 
+<script type="text/javascript" src="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
 <title>我的电影</title>
 <style type="text/css">
-<!--
-body {
-	background-image: url(/MovieManager/img/movie.jpg);
-	background-repeat: no-repeat;
-	background-size: 100%;
-}
--->
+
 </style></head>
 <body>
-<div class="one" id="one">
+<div class="container">
+	<div class="row clearfix" align="center">
+		<div class="col-md-12 column">
+			<p>
+				用户 <% String username = (String)session.getAttribute("username");
+				out.print(username);  %><br>
+			</p>
+			<p align="center">
+				${mylist}
+			</p>
+			<a class="btn btn-default btn-block" href="./main" role="button">返回</a>
+		</div>
+	</div>
+	
+</div>
+
+
+<!-- <div class="one" id="one">
   <div align="center">用户
-    <% String username = (String)session.getAttribute("username");
-out.print(username); %>
+  
+     String username = (String)session.getAttribute("username");
+out.print(username); 
+
   </div>
   <p align="center">
 ${mylist}
@@ -29,6 +46,6 @@ ${mylist}
       <input type="submit" value="返回">
     </div>
   </div>
-</form>
+</form> -->
 </body>
 </html>
