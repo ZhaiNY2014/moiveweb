@@ -1,5 +1,7 @@
 package com.moviemanager.web.jdbc;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
 import java.sql.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
@@ -230,10 +232,11 @@ public class SpringjdbcConfig {
 		PreparedStatement pstm = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
 		Connection con = null;
+		String passwordmd5 = GetMd5String(password);
 		String usernameutf8 = new String(username.getBytes("ISO-8859-1"),"utf-8");
-		String passwordutf8 = new String(password.getBytes("ISO-8859-1"),"utf-8");
+		//String passwordutf8 = new String(password.getBytes("ISO-8859-1"),"utf-8");
 		
-		String sql = "insert into users values(null,\""+usernameutf8+"\",\""+passwordutf8+"\",0,0)";
+		String sql = "insert into users values(null,\""+usernameutf8+"\",\""+passwordmd5+"\",0,0)";
 		System.out.println(sql);
 		
 		con = dbutil.Getcon();
@@ -305,5 +308,19 @@ public class SpringjdbcConfig {
 		}
 		
 		return mylist;
+	}
+	
+	public  String GetMd5String(String password){
+		String md5 = "";
+		try{
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(password.getBytes());
+			md5 = new BigInteger(1,md.digest()).toString();
+		}catch(Exception ex){
+			
+		}
+		System.out.println(md5);
+		
+		return md5;
 	}
 }

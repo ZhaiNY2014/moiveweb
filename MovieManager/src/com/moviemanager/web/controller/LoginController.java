@@ -1,7 +1,11 @@
 package com.moviemanager.web.controller;
 
+import java.math.BigInteger;
+import java.security.MessageDigest;
+
 import javax.servlet.http.HttpSession;
 
+import org.springframework.expression.spel.standard.SpelExpression;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,7 +33,7 @@ public class LoginController {
 		//验证是否有用户已经登录
 		if(session.getAttribute("islogin").toString().equals("nologin")){
 			if(user_db.getUsername().equals(username)  //用户名通过
-					&& user_db.getPassword().equals(password)  //密码通过
+					&& user_db.getPassword().equals(GetMd5String(password))  //密码通过
 					){
 				session.setAttribute("session-userid", sessionid);
 				session.setAttribute("userid", user_db.getUserid_I().toString());
@@ -59,9 +63,16 @@ public class LoginController {
 		return mv;
  	}
 	
-	public String GetMd5String(String password){
+	public  String GetMd5String(String password){
 		String md5 = "";
-		
+		try{
+			MessageDigest md = MessageDigest.getInstance("MD5");
+			md.update(password.getBytes());
+			md5 = new BigInteger(1,md.digest()).toString();
+		}catch(Exception ex){
+			
+		}
+		System.out.println(md5);
 		
 		return md5;
 	}
