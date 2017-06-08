@@ -16,7 +16,9 @@
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
-			 
+			 <h1 class="text-center">
+				超级电影网
+			</h1>
 			<div class="row clearfix">
 				<div class="col-md-2 column">
 					<ul class="nav nav-stacked nav-tabs">
@@ -32,7 +34,9 @@
 						<li>
 							 <a href="./Top10">猜你喜欢</a>
 						</li>
-						
+						<li>
+							 <a href="./mylist">我的电影</a>
+						</li>
 					</ul>
 				</div>
 				<div class="col-md-8 column">
