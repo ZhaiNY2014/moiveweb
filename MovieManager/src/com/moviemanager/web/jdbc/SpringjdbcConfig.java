@@ -49,8 +49,10 @@ public class SpringjdbcConfig {
 	 */
 	public MovieModel SelectMoiveName(String moviename) throws Exception{
 		String movienameutf8 = new String(moviename.getBytes("ISO-8859-1"),"utf-8");
+		System.out.println(moviename + " - "+ movienameutf8);
+		
 		String sql = "Select * from movieinfo where moviename=\"" + movienameutf8 + "\"";
-		System.out.println(sql + "," + movienameutf8);
+		//System.out.println(sql + "," + movienameutf8);
 		PreparedStatement pstm = null;
 		ResultSet rs = null;
 		SpringjdbcConfig dbutil = new SpringjdbcConfig();
@@ -75,6 +77,42 @@ public class SpringjdbcConfig {
 		
 		return movie;
 	}
+	
+	/**
+	 * 这个函数用来查询单个的电影信息
+	 * @param moviename
+	 * @return MovieModel
+	 * @throws Exception 
+	 */
+	public MovieModel SelectMoiveName2(String moviename) throws Exception{
+		
+		String sql = "Select * from movieinfo where moviename=\"" + moviename + "\"";
+		//System.out.println(sql + "," + movienameutf8);
+		PreparedStatement pstm = null;
+		ResultSet rs = null;
+		SpringjdbcConfig dbutil = new SpringjdbcConfig();
+		Connection con = null;
+		MovieModel movie = new MovieModel();
+		
+		con = dbutil.Getcon();
+		pstm = (PreparedStatement) con.prepareStatement(sql);
+		rs = pstm.executeQuery(sql);
+		
+		while(rs.next()){
+			movie.setMovieId(rs.getInt("movieid"));
+			movie.setMoviename(rs.getString("moviename"));
+			movie.setDirector(rs.getString("director"));
+			movie.setActor(rs.getString("actor"));
+			movie.setClassification(rs.getString("classification"));
+			movie.setCountry(rs.getString("country"));
+			movie.setLanguage(rs.getString("language"));
+			movie.setShowdate(rs.getInt("showdate"));
+			movie.setScore(rs.getDouble("score"));
+		}	
+		
+		return movie;
+	}
+	
 	
 	/**
 	 * 该函数用于top10的搜索

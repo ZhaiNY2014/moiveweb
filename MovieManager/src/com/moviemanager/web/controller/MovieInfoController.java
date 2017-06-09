@@ -43,7 +43,8 @@ public class MovieInfoController {
 		session.setAttribute("moviedate", movie.getShowdate());
 		session.setAttribute("moviescore", movie.getScore_D().toString());
 		session.setAttribute("movieprice", movie.getprice_i().toString());
-		
+		session.setAttribute("moiveid", movie.getMoiveId_I().toString());
+		//System.out.println("movieid"+movie.getMoiveId_I().toString());
 		sjc.AddHit(moviename);
 		
 		mv.setViewName("movieinfo");

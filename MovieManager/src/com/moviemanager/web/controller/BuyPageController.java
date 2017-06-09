@@ -1,5 +1,9 @@
 package com.moviemanager.web.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -7,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.moviemanager.web.jdbc.SpringjdbcConfig;
+import com.moviemanager.web.model.MovieModel;
 
 @Controller
 public class BuyPageController {
@@ -63,11 +68,24 @@ public class BuyPageController {
 	}
 	
 	@RequestMapping(value="/buyinfo")
-	public ModelAndView BuyingPage(){
+	public ModelAndView BuyingPage(HttpSession session){
 		ModelAndView mv = new ModelAndView();
+		String moviename = session.getAttribute("moviename").toString();
+		System.out.println(moviename);
 		
+		MovieModel movie = new MovieModel();
+		SpringjdbcConfig sjc = new SpringjdbcConfig();
 		
-		mv.setViewName("buyinfo");
+		try{
+			movie = sjc.SelectMoiveName2(moviename);
+			mv.addObject("movieimg", movie.getMoiveId_I().toString());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+
+		mv.setViewName("/buyinfo");
 		return mv;
 	}
 	

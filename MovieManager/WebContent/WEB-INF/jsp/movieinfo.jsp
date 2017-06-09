@@ -79,7 +79,10 @@
 			<div class="col-md-1 column"></div>
 			<div class="col-md-1 column"></div>
 			<div class="col-md-6 column">
-				<a class="btn btn-default btn-block" href="./buyinfo" role="button">想看</a>
+				<form  action="./buyinfo" method="post">
+					<input class="btn btn-default btn-block" type="submit" value="想看">
+					</form>
+				
 			</div>
 			<div class="col-md-1 column"></div>
 			<div class="col-md-1 column"></div>

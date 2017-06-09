@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html lang="Zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link type="text/css" href="${pageContext.request.contextPath}/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"> 
@@ -62,8 +62,8 @@
 						<td>
 						
 						</td>
-						<td colspan="3" rowspan="7">
-							
+						<td colspan="3" rowspan="7" width="200px" height="300px">
+							<img src="${pageContext.request.contextPath}/img/${movieimg}.jpg" class="img-responsive" alt="Responsive image">
 						</td>
 					</tr>
 					<tr>
